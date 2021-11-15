@@ -1,0 +1,159 @@
+.body{
+    background: #ad5389;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #3c1053, #ad5389);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #3c1053, #ad5389); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: 500%;
+    animation: fondo 10s infinite;
+    color: white;
+    height: 80vh;
+}
+.body2{
+    
+background: #20002c;  /* fallback for old browsers */
+background: -webkit-linear-gradient(to right, #cbb4d4, #20002c);  /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to right, #cbb4d4, #20002c); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+
+}
+#score{
+    font-family: 'Starmap';
+}
+
+.cuadrado{
+    width: 64px;
+    height: 64px;
+    position: relative;
+    animation: cuadrado 5s infinite;
+    animation-direction: alternate;
+}
+.pieza2{
+    width: 64px;
+    height: 64px;
+    position: relative;
+    animation: pieza2 5s infinite;
+    animation-direction: alternate;
+}
+
+.container{
+    display: flex;
+    justify-content: center;
+}
+/* .oculto{
+    display: none; */
+/* } */
+
+.grid{
+    width: 200px;
+    height: 400px;
+    background-color: rgb(145, 139, 139);
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.grid div {
+    height: 20px;
+    width: 20px;
+}
+
+.tetromino{
+    background-color: blue;
+}
+
+.mini-grid{
+    margin-left: 50px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: rgb(145, 139, 139);
+    border: 2px solid black;
+}
+
+.mini-grid div{
+    height: 20px;
+    width: 20px;
+}
+
+@keyframes fondo {
+    0%{
+        background-position: 0% 50%;
+    }
+    50%{
+        background-position: 100% 50%;
+    }
+    100%{   
+        background-position: 0% 50%;
+    }
+    
+}
+
+@keyframes cuadrado {
+    0%{
+        left: 0px; top: -200px;
+    }
+    50%{
+        left: 200px; top: -30px;
+    }
+    100%{
+        left: 0px; top: 0px;
+    }
+    
+}
+
+@keyframes pieza2 {
+    0%{
+        left: 900px; top: 0px;
+    }
+    50%{
+        left: 900px ; top: -50px;
+        transform: rotate(180deg);
+    }
+    100%{
+        left: 900px; top: -400px;
+    }
+} 
+
+/*Fuente*/
+@font-face{
+    font-family:"Starmap";
+    src: url("./fuente/00TT.TTF");
+  }
+/*BOTÓN INICIO*/
+.botom{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20%; 
+}
+.boton{
+   
+   display: inline-block;
+   text-align: center;
+   color: white;
+   font-family: 'Starmap';
+   background: #03001e;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #fdeff9, #ec38bc, #7303c0, #03001e); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+   
+   padding: 1rem 2rem;
+   border-radius: .25rem;
+   min-width: 200px;
+   text-decoration: none;
+   box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.5);
+   animation: pulse 1.5s infinite;
+}
+@keyframes pulse {
+  0%{
+      transform: scale(.99);
+      box-shadow: 0 0 0 0 rgba(256, 256, 256, .1);
+  }
+  70%{
+      transform: scale(1);
+      box-shadow: 0 0 0 25px rgba(256, 256, 256, 0);
+  }
+  100%{
+      transform: scale(.99);
+      box-shadow: 0 0 0 0 rgba(256, 256, 256, 0);
+  }
+}
